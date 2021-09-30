@@ -12,11 +12,21 @@ services:
     image: wesleywillians/kong-service:latest
     environment:
       PORT: ":8081"
-      CONTENT: "<h1>Service A</h1>"
+      CONTENT: "<h1>Service A.1</h1>"
     networks:
       - kong-net
     ports:
       - 8081:8081
+
+  servicea2:
+    image: wesleywillians/kong-service:latest
+    environment:
+      PORT: ":7071"
+      CONTENT: "<h1>Service A.2</h1>"
+    networks:
+      - kong-net
+    ports:
+      - 7071:7071
 
   serviceb:
     image: wesleywillians/kong-service:latest
